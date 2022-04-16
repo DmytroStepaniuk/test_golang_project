@@ -42,3 +42,4 @@ RUN go install golang.org/x/tools/gopls@latest
 RUN go install -v github.com/mdempsky/gocode@latest
 RUN go install -v github.com/ramya-rao-a/go-outline@latest
 RUN go install -v github.com/go-delve/delve/cmd/dlv@latest
+RUN go install -v github.com/cosmtrek/air@latest

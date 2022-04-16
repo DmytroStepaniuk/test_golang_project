@@ -4,7 +4,7 @@
   "service": "test_golang_project",
   "workspaceFolder": "/app",
   "shutdownAction": "stopCompose",
-  "postCreateCommand": "go version",
+  "postCreateCommand": "go version && go mod download && go mod tidy",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.defaultProfile.osx": "zsh",
@@ -47,5 +47,8 @@
     "eamodio.gitlens",
     "golang.go",
     "IBM.output-colorizer",
+    "ms-azuretools.vscode-docker",
+    "Gruntfuggly.todo-tree",
+    "bierner.emojisense",
   ]
 }

@@ -1,0 +1,18 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "startDelve",
+      "type": "shell",
+      "command": "dlv debug --headless --api-version=2 --listen=:12345 --log",
+      "problemMatcher": [
+        "$go"
+      ],
+
+      "isBackground": true,
+
+    }
+  ]
+}

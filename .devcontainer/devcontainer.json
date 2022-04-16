@@ -1,0 +1,51 @@
+{
+  "name": "TEST_GOLANG_PROJECT",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "test_golang_project",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "go version",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "[golang]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+      },
+    },
+    "editor.formatOnSave": false,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "editor.cursorSmoothCaretAnimation": true,
+    "files.trimTrailingWhitespace": true,
+    "files.eol": "\n",
+    "go.useLanguageServer": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+      // "--fast",
+      "--timeout",
+      "5m"
+    ],
+    "go.testFlags": [
+      "-cover",
+      "-race",
+      "-count=1",
+      "-v"
+    ],
+    "go.delveConfig": {
+      "apiVersion": 2,
+    },
+    "gopls": {
+      // "usePlaceholders": true,
+    },
+
+  },
+  "extensions": [
+    "eamodio.gitlens",
+    "golang.go",
+    "IBM.output-colorizer",
+  ]
+}

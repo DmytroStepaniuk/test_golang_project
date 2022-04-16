@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  test_golang_project:
+    build:
+      context: .
+      dockerfile: Dockerfile.devcontainer
+    stdin_open: true
+    tty: true
+    environment:
+      HISTFILE: /root/hist/.zsh_history # inspired by https://gist.github.com/gido/9b7e323571cf61820bd4baef92e30861
+    volumes:
+      - ../:/app:delegated
+      - test_golang_project__go-pkg:/go/pkg
+      - test_golang_project__vscode-extensions:/root/.vscode-server/extensions
+      - ~/.gitconfig:/root/.gitconfig:z
+      - ~/.ssh:/root/.ssh:z
+      - test_golang_project__zsh_history:/root/hist
+volumes:
+  test_golang_project__go-pkg:
+  test_golang_project__vscode-extensions:
+  test_golang_project__zsh_history:

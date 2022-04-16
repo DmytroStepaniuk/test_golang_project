@@ -50,5 +50,6 @@
     "ms-azuretools.vscode-docker",
     "Gruntfuggly.todo-tree",
     "bierner.emojisense",
+    "stkb.rewrap",
   ]
 }

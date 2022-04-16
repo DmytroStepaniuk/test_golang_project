@@ -11,6 +11,8 @@ services:
       HISTFILE: /root/hist/.zsh_history # inspired by https://gist.github.com/gido/9b7e323571cf61820bd4baef92e30861
     volumes:
       - ../:/app:delegated
+      - ~/.docker:/root/.docker:z
+      - /var/run/docker.sock:/var/run/docker.sock
       - test_golang_project__go-pkg:/go/pkg
       - test_golang_project__vscode-extensions:/root/.vscode-server/extensions
       - ~/.gitconfig:/root/.gitconfig:z

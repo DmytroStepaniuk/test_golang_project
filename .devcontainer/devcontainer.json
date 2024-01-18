@@ -5,51 +5,53 @@
   "workspaceFolder": "/app",
   "shutdownAction": "stopCompose",
   "postCreateCommand": "go version && go mod download && go mod tidy",
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "[golang]": {
-      "editor.insertSpaces": true,
-      "editor.tabSize": 2,
-      "editor.codeActionsOnSave": {
-        "source.organizeImports": true,
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.defaultProfile.osx": "zsh",
+        "[golang]": {
+          "editor.insertSpaces": true,
+          "editor.tabSize": 2,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+          }
+        },
+        "editor.formatOnSave": true,
+        "editor.renderWhitespace": "all",
+        "editor.tabSize": 2,
+        "editor.cursorSmoothCaretAnimation": "on",
+        "files.trimTrailingWhitespace": true,
+        "files.eol": "\n",
+        "go.useLanguageServer": true,
+        "go.lintTool": "golangci-lint",
+        "go.lintFlags": [
+          // "--fast",
+          "--timeout",
+          "5m"
+        ],
+        "go.testFlags": [
+          "-cover",
+          "-race",
+          "-count=1",
+          "-v"
+        ],
+        "go.delveConfig": {
+          "apiVersion": 2
+        },
+        "gopls": {
+          // "usePlaceholders": true,
+        }
       },
-    },
-    "editor.formatOnSave": false,
-    "editor.renderWhitespace": "all",
-    "editor.tabSize": 2,
-    "editor.cursorSmoothCaretAnimation": true,
-    "files.trimTrailingWhitespace": true,
-    "files.eol": "\n",
-    "go.useLanguageServer": true,
-    "go.autocompleteUnimportedPackages": true,
-    "go.lintTool": "golangci-lint",
-    "go.lintFlags": [
-      // "--fast",
-      "--timeout",
-      "5m"
-    ],
-    "go.testFlags": [
-      "-cover",
-      "-race",
-      "-count=1",
-      "-v"
-    ],
-    "go.delveConfig": {
-      "apiVersion": 2,
-    },
-    "gopls": {
-      // "usePlaceholders": true,
-    },
-
-  },
-  "extensions": [
-    "eamodio.gitlens",
-    "golang.go",
-    "IBM.output-colorizer",
-    "ms-azuretools.vscode-docker",
-    "Gruntfuggly.todo-tree",
-    "bierner.emojisense",
-    "stkb.rewrap",
-  ]
+      "extensions": [
+        "eamodio.gitlens",
+        "golang.go",
+        "IBM.output-colorizer",
+        "ms-azuretools.vscode-docker",
+        "Gruntfuggly.todo-tree",
+        "bierner.emojisense",
+        "stkb.rewrap"
+      ]
+    }
+  }
 }
